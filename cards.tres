@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/poker.png-74f0b701671b7358824c60de62f28e77.stex"
+
+[resource]
+atlas = SubResource( 1 )
+region = Rect2( 17.005, 0.859039, 169.836, 51.1407 )

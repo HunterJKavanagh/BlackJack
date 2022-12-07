@@ -1,0 +1,191 @@
+[gd_scene format=2]
+
+[node name="UI" type="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Dealer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Hand" type="ColorRect" parent="Dealer"]
+margin_top = 28.0
+margin_right = 980.0
+margin_bottom = 178.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Dealer"]
+margin_left = 984.0
+margin_right = 1024.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 40, 0 )
+size_flags_vertical = 1
+align = 1
+valign = 1
+
+[node name="Center" type="HBoxContainer" parent="."]
+margin_top = 210.0
+margin_right = 1024.0
+margin_bottom = 390.0
+rect_min_size = Vector2( 0, 180 )
+size_flags_horizontal = 3
+
+[node name="TotalPoints" type="ColorRect" parent="Center"]
+margin_right = 396.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/TotalPoints"]
+margin_right = 396.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Center/TotalPoints/VBoxContainer"]
+margin_right = 396.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Total Points"
+align = 1
+
+[node name="Points" type="Label" parent="Center/TotalPoints/VBoxContainer"]
+margin_top = 18.0
+margin_right = 396.0
+margin_bottom = 180.0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1250
+"
+align = 1
+valign = 1
+
+[node name="BetControll" type="VBoxContainer" parent="Center"]
+margin_left = 400.0
+margin_right = 440.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="plus" type="Button" parent="Center/BetControll"]
+margin_right = 40.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "+"
+
+[node name="minus" type="Button" parent="Center/BetControll"]
+margin_top = 61.0
+margin_right = 40.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "-"
+
+[node name="zero" type="Button" parent="Center/BetControll"]
+margin_top = 122.0
+margin_right = 40.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+
+[node name="Bet" type="ColorRect" parent="Center"]
+margin_left = 444.0
+margin_right = 841.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/Bet"]
+margin_right = 397.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Center/Bet/VBoxContainer"]
+margin_right = 397.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Bet"
+align = 1
+
+[node name="Bet" type="Label" parent="Center/Bet/VBoxContainer"]
+margin_top = 18.0
+margin_right = 397.0
+margin_bottom = 180.0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "250
+
+"
+align = 1
+valign = 1
+
+[node name="Deck" type="ColorRect" parent="Center"]
+margin_left = 845.0
+margin_right = 973.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 128, 0 )
+size_flags_vertical = 3
+
+[node name="Hand Controll" type="VBoxContainer" parent="Center"]
+margin_left = 977.0
+margin_right = 1024.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 40, 0 )
+size_flags_vertical = 3
+
+[node name="Hit" type="Button" parent="Center/Hand Controll"]
+margin_right = 47.0
+margin_bottom = 57.0
+size_flags_vertical = 3
+text = "Hit"
+
+[node name="Stand" type="Button" parent="Center/Hand Controll"]
+margin_top = 61.0
+margin_right = 47.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Stand"
+
+[node name="Split" type="Button" parent="Center/Hand Controll"]
+margin_top = 122.0
+margin_right = 47.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Split"
+
+[node name="Player" type="HBoxContainer" parent="."]
+margin_top = 394.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Hand" type="ColorRect" parent="Player"]
+margin_top = 28.0
+margin_right = 980.0
+margin_bottom = 178.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Player"]
+margin_left = 984.0
+margin_right = 1024.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 40, 0 )
+size_flags_vertical = 1
+align = 1
+valign = 1

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Hand.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Root.gd" type="Script" id=2]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Card.tscn" type="PackedScene" id=4]
+
+[node name="Root" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 3 )]
+
+[node name="DealerHand" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 105 )
+z_index = 1
+
+[node name="Card" parent="." instance=ExtResource( 4 )]
+position = Vector2( 910, 299 )
+scale = Vector2( 6, 6 )
+animation = "deck"
+frame = 3
+
+[node name="PlayerHand" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 498 )
+z_index = 5
+
+[connection signal="pressed" from="UI/Center/BetControll/plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="UI/Center/BetControll/minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="UI/Center/BetControll/zero" to="." method="_on_zero_pressed"]
+[connection signal="pressed" from="UI/Center/Hand Controll/Hit" to="." method="_on_Hit_pressed"]
+[connection signal="pressed" from="UI/Center/Hand Controll/Stand" to="." method="_on_Stand_pressed"]
+
+[editable path="UI"]
