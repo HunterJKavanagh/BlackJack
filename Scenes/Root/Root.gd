@@ -2,7 +2,7 @@ extends Node2D
 
 
 var bj = load('res://lib/blackjack.gd').new()
-var points = 1
+var points = 9
 var bet = 1
 
 
