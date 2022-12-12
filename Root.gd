@@ -29,9 +29,26 @@ func start_round():
 	$'UI/Center/TotalPoints/VBoxContainer/Points'.text = str(points)
 	$'UI/Center/Bet/VBoxContainer/Bet'.text = str(bet)
 
-func update_BetControll():
+func update_UI():
 	$'UI/Center/TotalPoints/VBoxContainer/Points'.text = str(points)
 	$'UI/Center/Bet/VBoxContainer/Bet'.text = str(bet)
+	$Node2D/Result.visible = false
+
+func round_result(player_hand, dealer_hand) -> String:
+	var player_value = bj.hand_value(player_hand)
+	var dealer_value = bj.hand_value(dealer_hand)
+	
+	if player_value > 21:
+		if dealer_value > 21: # draw
+			return 'Draw'
+		else: # loss
+			return 'Loss'
+	elif player_value > dealer_value or dealer_value > 21: # win
+		return 'Win'
+	elif player_value == dealer_value: # draw
+		return 'Draw'
+	else: # loss
+		return 'Loss'
 
 
 func _on_Hit_pressed():
@@ -49,21 +66,17 @@ func _on_Hit_pressed():
 		var player_value = bj.hand_value($PlayerHand.hand)
 		var dealer_value = bj.hand_value($DealerHand.hand)
 		
-		if player_value > 21:
-			if dealer_value > 21: # draw
-				points += bet
-				bet = 0
-			else: # loss
-				bet = 0
-		elif player_value > dealer_value or dealer_value > 21: # win
+		var result = round_result($PlayerHand.hand, $DealerHand.hand)
+		
+		if result == 'Win':
 			points += bet*2
 			bet = 0
-		elif player_value == dealer_value: # draw
+		elif result == 'Draw':
 			points += bet
 			bet = 0
-		else: # loss
+		elif result == 'Loss':
 			bet = 0
-		update_BetControll()
+		update_UI()
 		
 		start_round()
 		$'UI/Center/Hand Controll/Stand'.disabled = false
@@ -81,23 +94,25 @@ func _on_Stand_pressed():
 	$UI/Dealer/Label.text = str(bj.hand_value($DealerHand.hand))
 	$'UI/Center/Hand Controll/Stand'.disabled = true
 	$'UI/Center/Hand Controll/Hit'.text = 'Start'
+	$Node2D/Result.text = round_result($PlayerHand.hand, $DealerHand.hand)
+	$Node2D/Result.visible = true
 
 
 func _on_plus_pressed():
 	if points > 0:
 		points -= 1
 		bet += 1
-	update_BetControll()
+	update_UI()
 
 
 func _on_minus_pressed():
 	if bet > 0:
 		points += 1
 		bet -= 1
-	update_BetControll()
+	update_UI()
 
 
 func _on_zero_pressed():
 	points += bet
 	bet = 0
-	update_BetControll()
+	update_UI()

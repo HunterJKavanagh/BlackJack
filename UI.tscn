@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/roboto.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/roboto_big.tres" type="DynamicFont" id=2]
 
 [node name="UI" type="VBoxContainer"]
 margin_right = 1024.0
@@ -50,20 +53,21 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Center/TotalPoints/VBoxContainer"]
 margin_right = 396.0
-margin_bottom = 14.0
+margin_bottom = 19.0
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "Total Points"
 align = 1
 
 [node name="Points" type="Label" parent="Center/TotalPoints/VBoxContainer"]
-margin_top = 18.0
+margin_top = 23.0
 margin_right = 396.0
 margin_bottom = 180.0
-size_flags_vertical = 3
+size_flags_vertical = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "1250
-"
+custom_fonts/font = ExtResource( 2 )
+text = "1250"
 align = 1
 valign = 1
 
@@ -111,21 +115,21 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Center/Bet/VBoxContainer"]
 margin_right = 397.0
-margin_bottom = 14.0
+margin_bottom = 19.0
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "Bet"
 align = 1
 
 [node name="Bet" type="Label" parent="Center/Bet/VBoxContainer"]
-margin_top = 18.0
+margin_top = 23.0
 margin_right = 397.0
 margin_bottom = 180.0
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "250
-
-"
+custom_fonts/font = ExtResource( 2 )
+text = "250"
 align = 1
 valign = 1
 
@@ -174,6 +178,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Hand" type="ColorRect" parent="Player"]
+visible = false
 margin_top = 28.0
 margin_right = 980.0
 margin_bottom = 178.0
@@ -182,8 +187,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="Player"]
-margin_left = 984.0
-margin_right = 1024.0
+margin_right = 40.0
 margin_bottom = 206.0
 rect_min_size = Vector2( 40, 0 )
 size_flags_vertical = 1
