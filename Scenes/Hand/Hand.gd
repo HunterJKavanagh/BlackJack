@@ -1,13 +1,11 @@
-tool
-
 extends Node2D
 
-var Card = load("res://Card.tscn")
+
+var Card = load("res://Scenes/Card/Card.tscn")
 var hand: Array = []
 
-func _ready():
-	pass
 
+# Adds a card the the hand Array and the game.
 func add_card(card: int, hidden: bool = false):
 	self.hand.append(card)
 	var tmp_card: AnimatedSprite = Card.instance()
@@ -20,15 +18,19 @@ func add_card(card: int, hidden: bool = false):
 	tmp_card.position.x += 6*20*(hand.size()-1)
 	self.add_child(tmp_card)
 
-func reval_all():
+
+# Will reaveal any face down cards
+func reveal_all():
 	var tmp_hand = self.hand
 	self.clear_hand()
 	set_hand(tmp_hand)
 
+# Adds a list of cards to the the hand Array and the game.
 func set_hand(hand: Array):
 	self.clear_hand()
 	for i in range(hand.size()):
 		add_card(hand[i])
+
 
 func clear_hand():
 	self.hand = []

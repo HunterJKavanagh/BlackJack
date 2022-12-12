@@ -92,7 +92,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "-"
 
-[node name="zero" type="Button" parent="Center/BetControll"]
+[node name="One" type="Button" parent="Center/BetControll"]
 margin_top = 122.0
 margin_right = 40.0
 margin_bottom = 180.0

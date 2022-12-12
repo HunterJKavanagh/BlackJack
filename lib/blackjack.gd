@@ -20,6 +20,9 @@ func shuffle():
 func draw() -> int:
 	return deck.pop_front()
 
+# Calcautes the value of the sum of all the cards
+# if the total + 11 > 21 then aces are counted as a 1
+# else the are counted as a 11
 func hand_value(hand: Array) -> int:
 	if hand.size() > 0:
 		var values: PoolIntArray = []
